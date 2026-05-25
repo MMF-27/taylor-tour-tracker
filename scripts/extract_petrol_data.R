@@ -162,7 +162,7 @@ extract_chart_data <- function(image_path, city_name, target_dots = 45,
     if (nrow(ld)>0) label_cols <- c(label_cols, ld[,2])
   }
   sl <- max(1, min(label_cols) + 25)      # Left crop of y-axis labels
-  sr <- round(quantile(label_cols, 0.6))  # Right crop of y-axis labels: Common error when reformatting
+  sr <- round(quantile(label_cols, 0.59))  # Right crop of y-axis labels: Common error when reformatting
   
   ocr_eng <- tesseract(options=list(tessedit_char_whitelist="0123456789",
                                     tessedit_pageseg_mode=7))
