@@ -12,7 +12,7 @@ today <- Sys.Date()
 
 
 LABEL_MULTIPLE <- 5                       # label granularity (noise filter only)
-ALLOWED_STEPS  <- c(5, 10, 20, 25, 50)    # plausible cents-per-gridline spacings
+ALLOWED_STEPS  <- c(1,2,5, 10, 20, 25, 50)    # plausible cents-per-gridline spacings
 PLAUSIBLE      <- c(120, 260)
 
 
