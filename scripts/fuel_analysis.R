@@ -230,7 +230,7 @@ fuel.data.reduced <- fuel.data %>%
 
 plot_city_line_2 <- function(city) {
   
-  cutoff <- max(fuel.data.reduced$date) %m-% months(6)
+  cutoff <- as.Date("2026-02-01") #max(fuel.data.reduced$date) %m-% months(6)
   max_date <- max(fuel.data.reduced$date)
   
   monthly_dots <- monthly_avg %>%
