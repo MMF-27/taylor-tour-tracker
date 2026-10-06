@@ -47,6 +47,14 @@ jobs:
             ))
             cat("All packages installed\n")
           '
+      - name: Probe ACCC URL
+        continue-on-error: true
+        run: |
+          URL="https://www.accc.gov.au/sites/www.accc.gov.au/files/fuelwatch/sydney-metro-ulp.png"
+          echo "--- default curl UA ---"
+          curl -sI "$URL" | head -1
+          echo "--- browser-like UA ---"
+          curl -sI -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" -H "Referer: https://www.accc.gov.au/" "$URL" | head -1
 
       - name: Run scraper
         run: Rscript scripts/extract_petrol_data.R
