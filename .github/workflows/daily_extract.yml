@@ -1,8 +1,8 @@
 name: Daily Petrol Price Extraction
 
 on:
-  schedule:
-    - cron: '0 22 * * *'
+  # schedule:             commented out to stop autorun
+  #  - cron: '0 22 * * *' commented out to stop autorun
   workflow_dispatch:
 
 jobs:
